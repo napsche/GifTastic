@@ -24,3 +24,16 @@ function renderButtons () {
         console.log(topics);
     }
 }
+//function to add tv show when button is clicked
+$("#add-tvshow").on("click", function(event) {
+    //prevents form from submitting itself
+    event.preventDefault();
+    //grab text from input box
+    var showInput = $("#tvshow-input").val().trim();
+    //add show from input to our array of tvshows
+    topics.push(showInput);
+    renderButtons();
+    
+});
+//calling renderButtons to display initial array of shows
+renderButtons();
